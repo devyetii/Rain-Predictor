@@ -16,5 +16,4 @@ for line in sys.stdin:
     if j == 0: k += 1
     model[j] += w
 
-print(k)
-[print(model[i] / k) for i in range(WEIGHT_COUNT)]
+[print(model[i]) for i in range(WEIGHT_COUNT)]
