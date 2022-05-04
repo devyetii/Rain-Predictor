@@ -1,6 +1,4 @@
-IN_FILE = 'in.csv'
-MODEL_FILE  = 'model.csv'
-N_MAPPERS = 3
+MODEL_FILE  = 'model.txt'
 
 #==================================================
 MU = 0.002
