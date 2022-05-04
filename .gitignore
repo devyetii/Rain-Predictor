@@ -2,7 +2,3 @@
 !*.ipynb
 !*.py
 !README.md
-!model.txt
-!train.csv
-!test.csv
-!validate.csv
