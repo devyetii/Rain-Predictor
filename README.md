@@ -73,8 +73,41 @@ Refer to `preprocessing.ipynb` for information on perprocessing and visualizatio
 - MU=0.0001
 - T=1000
 - Initial Model = [1.000, 1.000, ..., 1.000]
-- Training Performance = 79.035%
-- Validation Performance = 79.03%
+- Training Accuracy = 79.035%
+- Validation Accuracy = 79.03%
 
 ---
 ## KNN
+### Idea
+- The mapper calculates euclidean distance from the given point (preprocessed) to the labeled points and output `<float,int>` for distance and class per labeled point
+- The reducer uses the min-heap data structure to get the class of the least K points in terms of distance and does a majority vote over the returned tuples
+
+### Hyper Parameters
+- `K` (env): Number of min distance points
+
+### Classify
+- To classify a point :-
+  1. Like LogReg, make sure hadoop is running and hadoop streaming jar file is in $HADOOP_HOME
+  2. export K
+  3. Give suitable permissions to `knn.sh`
+        
+        ```
+        $ chmod +x knn.sh
+        ```
+  4. Run inference
+        ```
+        $ ./knn.sh infere <comma_separated_string_like_12,122,102.25,0.2258487e-3>
+        ```
+        > Note: The string should be 25 commas-separated float values
+
+### Results
+- 2 Mappers
+- 1 Reducer
+- K = 5
+- Accuracy on `test.csv` dataset: 85.05%
+
+---
+## Future Work
+- Use Random Forest classifier
+- Gather all classifiers in one CLI for ease of use
+- Optimize Regularization in Logreg Mapper
