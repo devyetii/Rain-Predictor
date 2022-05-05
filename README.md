@@ -104,7 +104,7 @@ Refer to `preprocessing.ipynb` for information on perprocessing and visualizatio
 - 2 Mappers
 - 1 Reducer
 - K = 5
-- Accuracy on `test.csv` dataset: 85.05%
+- Accuracy on `validate.csv` dataset: 85.05%
 
 ---
 ## Future Work
