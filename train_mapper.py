@@ -19,7 +19,6 @@ try:
         model = [float(line) for line in f.readlines()]
 except:
     pass
-    # logger.error("FUCK")
 
 # input comes from STDIN (standard input)
 for t in range(1, T+1):
