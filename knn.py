@@ -15,8 +15,8 @@ def mapper(x: List[float]):
         p = record[:-1]
         p.insert(0, 1.0)
 
-        d = sum([x[i]*x[i] - p[i]*p[i] for i in range(WEIGHT_COUNT)]) # Detching unnecessary sqrt
-        print("%17.14f\t%d" % (d if d > 0 else -d, int(c)))
+        d = sum([(x[i] - p[i]) * (x[i] - p[i]) for i in range(WEIGHT_COUNT)]) # Detching unnecessary sqrt
+        print("%17.14f\t%d" % (d, int(c)))
 
 
 def reducer():
